@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="MauiAppFinal.Haberler"
+             Title="Haberler"
+             BackgroundColor="#F5F5F5">
+
+    <ContentPage.Resources>
+        <Style TargetType="Button" x:Key="ModernButtonStyle">
+            <Setter Property="BackgroundColor" Value="#4CAF50"/>
+            <Setter Property="TextColor" Value="White"/>
+            <Setter Property="FontSize" Value="14"/>
+            <Setter Property="FontAttributes" Value="Bold"/>
+            <Setter Property="CornerRadius" Value="20"/>
+            <Setter Property="Padding" Value="15,10"/>
+            <Setter Property="Margin" Value="5"/>
+            <Setter Property="VisualStateManager.VisualStateGroups">
+                <VisualStateGroupList>
+                    <VisualStateGroup x:Name="CommonStates">
+                        <VisualState x:Name="Normal">
+                            <VisualState.Setters>
+                                <Setter Property="BackgroundColor" Value="#4CAF50"/>
+                            </VisualState.Setters>
+                        </VisualState>
+                        <VisualState x:Name="Pressed">
+                            <VisualState.Setters>
+                                <Setter Property="BackgroundColor" Value="#45a049"/>
+                            </VisualState.Setters>
+                        </VisualState>
+                    </VisualStateGroup>
+                </VisualStateGroupList>
+            </Setter>
+        </Style>
+    </ContentPage.Resources>
+
+    <StackLayout>
+        <ScrollView Orientation="Horizontal">
+            <StackLayout Orientation="Horizontal" Margin="10" Spacing="10">
+                <Button Text="Manşet" Clicked="CategoryButton_Clicked" Style="{StaticResource ModernButtonStyle}"/>
+                <Button Text="Ekonomi" Clicked="CategoryButton_Clicked" Style="{StaticResource ModernButtonStyle}"/>
+                <Button Text="Gündem" Clicked="CategoryButton_Clicked" Style="{StaticResource ModernButtonStyle}"/>
+                <Button Text="Spor" Clicked="CategoryButton_Clicked" Style="{StaticResource ModernButtonStyle}"/>
+                <Button Text="Bilim Teknoloji" Clicked="CategoryButton_Clicked" Style="{StaticResource ModernButtonStyle}"/>
+                <Button Text="Son Dakika" Clicked="CategoryButton_Clicked" Style="{StaticResource ModernButtonStyle}"/>
+                <Button Text="Güncel" Clicked="CategoryButton_Clicked" Style="{StaticResource ModernButtonStyle}"/>
+                <Button Text="Eğitim" Clicked="CategoryButton_Clicked" Style="{StaticResource ModernButtonStyle}"/>
+            </StackLayout>
+        </ScrollView>
+
+        <ListView x:Name="newsListView" ItemsSource="{Binding FilteredNewsItems}" RowHeight="500" Margin="10" ItemTapped="NewsItem_Tapped">
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <ViewCell>
+                        <StackLayout Margin="0,0,0,10">
+                            <Image Source="{Binding ImageUrl}" Aspect="AspectFill" WidthRequest="400" HeightRequest="400"/>
+                            <Label Text="{Binding Title}" FontAttributes="Bold" Margin="10,5,10,0" TextColor="White" HorizontalOptions="Center"/>
+                            <Label Text="{Binding Author}" FontAttributes="None" Margin="10,5,10,0" TextColor="Gray" HorizontalOptions="Center"/>
+                            <Label Text="{Binding PubDate}" FontAttributes="None" Margin="10,5,10,0" TextColor="Gray" HorizontalOptions="Center"/>
+                        </StackLayout>
+                    </ViewCell>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
+    </StackLayout>
+</ContentPage>

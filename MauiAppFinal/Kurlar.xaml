@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:local="clr-namespace:MauiAppFinal"
+             x:Class="MauiAppFinal.Kurlar"
+             Title="Kurlar">
+
+    <ScrollView BackgroundColor="#FF96D8F3" >
+        <Grid RowDefinitions="Auto,*,Auto">
+            <Button Text="Kurları Yenile" 
+                    Clicked="OnRefreshClicked" 
+                    BackgroundColor="#FF2F4F52" 
+                    TextColor="White" 
+                    FontSize="18"
+                    FontAttributes="Bold" 
+                    Margin="10" 
+                    Padding="10" 
+                    CornerRadius="12" 
+                    Grid.Row="0" />
+            
+            <CollectionView Grid.Row="1" x:Name="dovizliste" Margin="10" >
+                
+                <CollectionView.Header>
+                    <Grid ColumnDefinitions="*,*,*,*,*" Padding="15">
+                        <Label Text="Tür" Grid.Column="0" FontSize="19" TextColor="White" BackgroundColor="#FF2F4F52" FontAttributes="Bold" HorizontalTextAlignment="Center"/>
+                        <Label Text="Alış" Grid.Column="1" FontSize="19" TextColor="White" BackgroundColor="#FF2F4F52" FontAttributes="Bold" HorizontalTextAlignment="Center"/>
+                        <Label Text="Satış" Grid.Column="2" FontSize="19" TextColor="White" BackgroundColor="#FF2F4F52" FontAttributes="Bold" HorizontalTextAlignment="Center"/>
+                        <Label Text="Fark" Grid.Column="3" FontSize="19" TextColor="White" BackgroundColor="#FF2F4F52" FontAttributes="Bold" HorizontalTextAlignment="Center"/>
+                        <Label Text="Yön" Grid.Column="4" FontSize="19" TextColor="White" BackgroundColor="#FF2F4F52" FontAttributes="Bold" HorizontalTextAlignment="Center"/>
+                    </Grid>
+                </CollectionView.Header>
+                
+                <CollectionView.ItemTemplate>
+                    <DataTemplate>
+                        <Frame BorderColor="#1abc9c" Margin="5,5,5,5" Padding="0" HasShadow="True">
+                            <Grid ColumnDefinitions="*,*,*,*,*" Padding="5">
+                                <Label Text="{Binding Doviz}" Grid.Column="0" FontSize="17"  FontAttributes="Bold" HorizontalTextAlignment="Center" VerticalOptions="Center"/>
+                                <Label Text="{Binding Alis}" Grid.Column="1" FontSize="16" TextColor="DarkOrange" HorizontalTextAlignment="Center" VerticalOptions="Center"/>
+                                <Label Text="{Binding Satis}" Grid.Column="2" FontSize="16" TextColor="DarkViolet" HorizontalTextAlignment="Center" VerticalOptions="Center"/>
+                                <Label Text="{Binding Fark}" Grid.Column="3" FontSize="16" TextColor="DarkSalmon" HorizontalTextAlignment="Center" VerticalOptions="Center"/>
+                                <Image Source="{Binding Yon}" Grid.Column="4" HeightRequest="20" HorizontalOptions="Center" VerticalOptions="Center"/>
+                            </Grid>
+                        </Frame>
+                    </DataTemplate>
+                </CollectionView.ItemTemplate>
+            </CollectionView>
+        </Grid>
+    </ScrollView>
+
+</ContentPage>

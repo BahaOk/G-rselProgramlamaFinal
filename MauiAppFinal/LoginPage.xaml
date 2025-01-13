@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="MauiAppFinal.LoginPage"
+             Title="Giriş Yap"
+             BackgroundColor="#F5F5F5">
+
+    <Grid RowDefinitions="Auto, *, Auto"
+          ColumnDefinitions="*"
+          Padding="20"
+          RowSpacing="20">
+
+        <Label Text="Hoş Geldiniz"
+               FontSize="28"
+               FontAttributes="Bold"
+               HorizontalOptions="Center"
+               VerticalOptions="Center"
+               Grid.Row="0" />
+
+        <StackLayout Grid.Row="1"
+                     VerticalOptions="Center"
+                     Spacing="15">
+
+            <Entry x:Name="emailEntry"
+                   Placeholder="Email"
+                   Keyboard="Email"
+                   BackgroundColor="White"
+                   TextColor="Black"
+                   PlaceholderColor="Gray"
+                   HeightRequest="50"
+                   HorizontalOptions="FillAndExpand"
+                   VerticalOptions="Center">
+            
+            </Entry>
+
+            <Entry x:Name="passwordEntry"
+                   Placeholder="Şifre"
+                   IsPassword="True"
+                   BackgroundColor="White"
+                   TextColor="Black"
+                   PlaceholderColor="Gray"
+                   HeightRequest="50"
+                   HorizontalOptions="FillAndExpand"
+                   VerticalOptions="Center" />
+
+            <Button Text="Giriş Yap"
+                    Clicked="OnLoginClicked"
+                    BackgroundColor="#6200EE"
+                    TextColor="White"
+                    FontAttributes="Bold"
+                    HeightRequest="50"
+                    HorizontalOptions="FillAndExpand"
+                    VerticalOptions="Center" />
+
+            <Button Text="Kayıt Ol"
+                    Clicked="OnRegisterClicked"
+                    BackgroundColor="Transparent"
+                    TextColor="#6200EE"
+                    FontAttributes="Bold"
+                    HeightRequest="50"
+                    HorizontalOptions="FillAndExpand"
+                    VerticalOptions="Center" />
+        </StackLayout>
+
+        <Label Text="© 2023 MauiAppFinal"
+               FontSize="12"
+               TextColor="Gray"
+               HorizontalOptions="Center"
+               VerticalOptions="End"
+               Grid.Row="2" />
+    </Grid>
+</ContentPage>

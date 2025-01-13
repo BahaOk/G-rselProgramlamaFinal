@@ -1,0 +1,48 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="MauiAppFinal.MainPage">
+
+    <ScrollView>
+        <VerticalStackLayout
+            Padding="30,0"
+            Spacing="25">
+
+              <Label
+                Margin="0,70,0,0"
+                Text="Ödev-2"
+                FontAttributes="Bold"
+                TextTransform="Uppercase"
+                Style="{StaticResource SubHeadline}"
+                FontSize="34"
+                />
+            <Image
+                Source="resim.jpeg"
+                HeightRequest="200" />
+
+            <Label
+                Text="Baha Ok"
+                Style="{StaticResource Headline}"
+                SemanticProperties.HeadingLevel="Level1" />
+            
+              <Label
+                Margin="0,70,0,0"
+                Text="21010310023"
+                FontAttributes="Bold"
+                TextTransform="Uppercase"
+                Style="{StaticResource SubHeadline}"
+                FontSize="34"
+                />
+                <Label
+                Margin="0,70,0,0"
+                Text="Bartın Üniversitesi Bilgisayar Mühendisliği"
+                FontAttributes="Italic"
+                TextTransform="Uppercase"
+                Style="{StaticResource SubHeadline}"
+                FontSize="20"
+                />
+           
+        </VerticalStackLayout>
+    </ScrollView>
+
+</ContentPage>

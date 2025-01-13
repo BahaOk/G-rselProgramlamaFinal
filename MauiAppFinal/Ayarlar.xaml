@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:font="clr-namespace:Microsoft.Maui.Controls;assembly=Microsoft.Maui.Controls"
+             x:Class="MauiAppFinal.Ayarlar"
+             Title="Ayarlar"
+             BackgroundColor="#F5F5F5">
+    <ContentPage.Resources>
+        <!-- Ortak stil -->
+        <Style TargetType="Label" x:Key="DefaultLabelStyle">
+            <Setter Property="FontSize" Value="16"/>
+            <Setter Property="FontAttributes" Value="Bold"/>
+            <Setter Property="TextColor" Value="#333333"/>
+        </Style>
+
+         <Style x:Key="DarkLabelStyle" TargetType="Label">
+        <Setter Property="BackgroundColor" Value="Black"/>
+        <Setter Property="TextColor" Value="White"/>
+    </Style>
+    </ContentPage.Resources>
+
+    <ScrollView>
+        <StackLayout Padding="20" Spacing="20" VerticalOptions="StartAndExpand">
+            <!-- Başlık -->
+            <Label Text="Uygulama Ayarları" 
+                   Style="{StaticResource DefaultLabelStyle}"
+                   FontSize="24"
+                   HorizontalOptions="Center"/>
+
+            <!-- Açıklama -->
+            <Label Text="Uygulama temasını seçmek için anahtarı değiştirin. Koyu veya açık mod arasında geçiş yapabilirsiniz." 
+                   FontSize="14"
+                   TextColor="#666666"
+                   HorizontalOptions="Center"
+                   HorizontalTextAlignment="Center"/>
+
+            <!-- Anahtar ve Label -->
+            <Frame BackgroundColor="White"
+                   CornerRadius="12"
+                   Padding="15"
+                   HasShadow="True"
+                   BorderColor="#E0E0E0">
+                <HorizontalStackLayout Spacing="15">
+                    <Label Text="Tema: " 
+                           Style="{StaticResource DefaultLabelStyle}"
+                           VerticalOptions="Center"/>
+                    <Switch x:Name="switchControl" 
+                            HorizontalOptions="EndAndExpand" 
+                            Toggled="Switch_Toggled"/>
+                    <Label x:Name="switchControlLabel" 
+                           Style="{StaticResource DefaultLabelStyle}" 
+                           VerticalOptions="Center" 
+                           Text="Açık"/>
+                </HorizontalStackLayout>
+            </Frame>
+
+
+         
+        </StackLayout>
+    </ScrollView>
+</ContentPage>

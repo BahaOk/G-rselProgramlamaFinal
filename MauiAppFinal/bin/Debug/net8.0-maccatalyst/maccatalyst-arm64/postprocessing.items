@@ -1,0 +1,17 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <_PostProcessingItem Include="MauiAppFinal.app/Contents/MacOS/MauiAppFinal">
+      <IsAppExtension>false</IsAppExtension>
+      <BCSymbolMapName>MauiAppFinal.bcsymbolmap</BCSymbolMapName>
+      <NoDSymUtil>true</NoDSymUtil>
+      <dSYMSourcePathExists>false</dSYMSourcePathExists>
+      <NoSymbolStrip>true</NoSymbolStrip>
+      <dSYMInfoPlistRelativePath>MauiAppFinal.app.dSYM\Contents\Info.plist</dSYMInfoPlistRelativePath>
+      <SymbolFile>/Users/bahaok/Desktop/MauiAppFinal/MauiAppFinal/obj/Debug/net8.0-maccatalyst/maccatalyst-arm64/mtouch-symbols.list</SymbolFile>
+      <DSymName>MauiAppFinal.app.dSYM</DSymName>
+      <SourceProjectPath>/Users/bahaok/Desktop/MauiAppFinal/MauiAppFinal</SourceProjectPath>
+      <IsXPCService></IsXPCService>
+    </_PostProcessingItem>
+  </ItemGroup>
+</Project>

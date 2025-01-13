@@ -1,0 +1,1 @@
+-v --force --timestamp=none --sign - --entitlements /Users/bahaok/Desktop/MauiAppFinal/MauiAppFinal/obj/Debug/net8.0-maccatalyst/maccatalyst-arm64/Entitlements.xcent /Users/bahaok/Desktop/MauiAppFinal/MauiAppFinal/bin/Debug/net8.0-maccatalyst/maccatalyst-arm64/MauiAppFinal.app

@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="MauiAppFinal.Yapilacaklar">
+
+  <VerticalStackLayout Padding="20" Spacing="15" BackgroundColor="#F5F5F5">
+     
+        <Label Text="Yapılacaklar Listesi"
+               FontSize="24"
+               HorizontalOptions="Center"
+               TextColor="#333"
+               FontAttributes="Bold" />
+
+        <StackLayout Orientation="Horizontal" Spacing="10">
+            <Entry x:Name="TaskEntry" Placeholder="Yeni görev ekle..." 
+                   HorizontalOptions="FillAndExpand"
+                   BackgroundColor="White"
+                   TextColor="Black"
+                   PlaceholderColor="#999"
+                   HeightRequest="40"
+                   Margin="0,0,10,0" />
+            <Button Text="Ekle"
+                    Clicked="GorevEkleme"
+                    BackgroundColor="#4CAF50"
+                    TextColor="White"
+                    CornerRadius="10"
+                    HeightRequest="40" />
+        </StackLayout>
+
+        <CollectionView x:Name="TasksListView"
+                        ItemsSource="{Binding Tasks}"
+                        BackgroundColor="#FFF"
+                        Margin="0,10,0,0">
+              <CollectionView.ItemTemplate>
+                <DataTemplate>
+                    <Frame Padding="10"
+                           Margin="0,5"
+                           CornerRadius="10"
+                           BorderColor="#E0E0E0"
+                           BackgroundColor="#FFFFFF"
+                           HasShadow="True">
+                        <StackLayout Orientation="Horizontal" Spacing="10">
+                         
+                            <CheckBox IsChecked="{Binding IsCompleted}"
+                                      VerticalOptions="Center"
+                                      Color="#4CAF50" />
+                         
+                            <Label Text="{Binding Task}"
+                                   VerticalOptions="Center"
+                                   HorizontalOptions="StartAndExpand"
+                                   FontSize="16"
+                                   TextColor="#333" />
+                            <StackLayout Orientation="Horizontal" Spacing="5">
+                                <Button Text="Düzenle"
+                                        Clicked="GorevDuzenle"
+                                        BackgroundColor="#2196F3"
+                                        TextColor="White"
+                                        CornerRadius="5"
+                                        WidthRequest="80"
+                                        HeightRequest="30" />
+                                <Button Text="Sil"
+                                        Clicked="GorevSil"
+                                        BackgroundColor="#F44336"
+                                        TextColor="White"
+                                        CornerRadius="5"
+                                        WidthRequest="80"
+                                        HeightRequest="30" />
+                            </StackLayout>
+                        </StackLayout>
+                    </Frame>
+              
+                </DataTemplate>
+
+            </CollectionView.ItemTemplate>
+                     </CollectionView>
+    </VerticalStackLayout>
+</ContentPage>
